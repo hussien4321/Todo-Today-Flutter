@@ -10,7 +10,30 @@
 
 Fully offline · no backend
 
+<img src="docs/screenshots/01-tasks.png" width="30%" alt="Active tasks with live countdowns" /> <img src="docs/screenshots/05-history.png" width="30%" alt="Task history" /> <img src="docs/screenshots/06-analytics.png" width="30%" alt="Analytics" />
+
 </div>
+
+---
+
+## Main features
+
+- **Tasks that expire 24 hours after they start** — finish it or lose it.
+- **Live countdown** on every active task.
+- **Reusable task templates** with emoji icons, seeded with fifteen suggestions on first run.
+- **History and analytics graphs** built from every past attempt, not just the latest.
+- **Deadline notifications** and a re-engagement reminder, both scheduled with the OS.
+- **Fully offline** — no account, no sync, no network.
+
+| Tasks | Complete | Task templates |
+|:---:|:---:|:---:|
+| ![Active tasks](docs/screenshots/01-tasks.png) | ![Marking a task done](docs/screenshots/02-complete.png) | ![Task templates](docs/screenshots/03-select-task.png) |
+| Live countdown on every active task, colour-coded as its 24 hours run down | Swipe to pass or forfeit | Reusable templates, started fresh each time |
+
+| Emoji picker | History | Analytics |
+|:---:|:---:|:---:|
+| ![Emoji picker](docs/screenshots/04-emoji-picker.png) | ![History](docs/screenshots/05-history.png) | ![Analytics](docs/screenshots/06-analytics.png) |
+| Searchable, categorised icon picker for each task | Every past attempt, passed or failed, restartable in one tap | All-time success rate, per-task breakdown and a daily pass/fail graph |
 
 ---
 
@@ -24,6 +47,17 @@ Fully offline · no backend
 | Charts | `charts_flutter` + a custom line graph |
 | Monetisation | `firebase_admob`, `flutter_inapp_purchase` |
 | Misc | `share`, `url_launcher`, `path_provider`, `font_awesome_flutter` |
+
+---
+
+## Getting started
+
+```bash
+flutter pub get
+flutter run
+```
+
+> **Note:** this is an early Flutter project (2018) pinned to pre-1.0-era package versions and a pre-null-safety SDK. It's preserved as written and needs a substantial dependency upgrade to build on current stable.
 
 ---
 
@@ -121,27 +155,3 @@ Two kinds, both handed to the platform scheduler rather than depending on the ap
 - **A re-engagement reminder** at seven days, cancelled and re-armed every time the service initialises — so it only ever fires for someone who genuinely stopped opening the app.
 
 Both use a stable id scheme (the reminder reserves `-1`, well clear of the database's autoincrementing todo ids) so cancel-and-reschedule targets the right pending notification instead of accumulating duplicates.
-
----
-
-## Main features
-
-- **Tasks that expire 24 hours after they start** — finish it or lose it.
-- **Live countdown** on every active task.
-- **Reusable task templates** with emoji icons, seeded with fifteen suggestions on first run.
-- **History and analytics graphs** built from every past attempt, not just the latest.
-- **Deadline notifications** and a re-engagement reminder, both scheduled with the OS.
-- **Fully offline** — no account, no sync, no network.
-
----
-
-## Getting started
-
-```bash
-flutter pub get
-flutter run
-```
-
-> **Note:** this is an early Flutter project (2018) pinned to pre-1.0-era package versions and a pre-null-safety SDK. It's preserved as written and needs a substantial dependency upgrade to build on current stable.
-
----
